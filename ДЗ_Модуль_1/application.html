@@ -1,104 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Авторизация</title>
-		<link rel="stylesheet" href="styles/style.css" />
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-			crossorigin="anonymous"
-		/>
-	</head>
-	<body class="bg-body-tertiary">
-		<header>
-			<nav class="navbar bg-body-tertiary">
-				<div class="container-fluid">
-					<a class="navbar-brand" href="#">Едем, но это не точно</a>
-					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="register.html"
-							>Выйти</a
-						>
-					</li>
-				</div>
-			</nav>
-		</header>
-		<main class="d-flex justify-content-center p-5">
-			<form class="row g-3">
-				<div class="col-md-6">
-					<label for="inputEmail4" class="form-label">Адрес</label>
-					<input type="email" class="form-control" id="inputEmail4" />
-				</div>
-				<div class="col-md-6">
-					<label for="inputPassword4" class="form-label">Желаемая дата</label>
-					<input type="date" class="form-control" id="inputPassword4" />
-				</div>
-				<div class="col-12">
-					<label for="inputAddress" class="form-label"
-						>Серия и номер водительского удостоверение</label
-					>
-					<input
-						type="text"
-						class="form-control"
-						id="inputAddress"
-						placeholder="1234"
-					/>
-				</div>
-				<div class="col-12">
-					<label for="inputAddress2" class="form-label">Дата выдачи</label>
-					<input
-						type="text"
-						class="form-control"
-						id="inputAddress2"
-						placeholder=""
-					/>
-				</div>
-				<div class="col-md-6">
-					<label for="inputCity" class="form-label">Модель</label>
-					<input type="text" class="form-control" id="inputCity" />
-				</div>
-				<div class="col-md-4">
-					<label for="inputState" class="form-label">Марка и модель</label>
-					<select id="inputState" class="form-select">
-						<option selected>Merseders</option>
-						<option>GLS 2025</option>
-						<option>Benz 2024</option>
-					</select>
-				</div>
-				<div class="col-md-2">
-					<label for="inputState" class="form-label">Тип оплаты</label>
-					<select id="inputState" class="form-select">
-						<option selected></option>
-						<option>Наличные</option>
-						<option>Банковской картой</option>
-					</select>
-				</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Отправить новую заявку</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-dark text-light">
+    <header>
+      <nav class="navbar bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand text-light" href="#">Едем, но это не точно</a>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="register.html"
+              >Выйти</a
+            >
+          </li>
+        </div>
+      </nav>
+    </header>
+    <main class="d-flex justify-content-center p-5">
+      <form class="row g-3 needs-validation" novalidate>
+        <div class="col-md-6">
+          <label for="validationServer1" class="form-label">Адрес</label>
+          <input
+            type="email"
+            class="form-control"
+            id="validationServer1"
+            required
+          />
+          <div class="invalid-feedback">
+            Пожалуйста, введите корректный email адрес.
+          </div>
+        </div>
 
-				<div class="col-12">
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" id="gridCheck" />
-						<label class="form-check-label" for="gridCheck">
-							ознакомлен с правилами предоставления услуги тест-драйва
-						</label>
-					</div>
-				</div>
-				<div class="col-12">
-					<a type="submit" class="btn btn-primary" href="requestbid.html"
-						>Вернуться назад</a
-					>
-					<button onclick="showAlert()" type="submit" class="btn btn-danger">
-						Отправить заявку
-					</button>
-				</div>
-			</form>
-		</main>
-	</body>
-	<script src="script/scriptAlert.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-		crossorigin="anonymous"
-	></script>
+        <div class="col-md-6">
+          <label for="validationServer2" class="form-label"
+            >Желаемая дата</label
+          >
+          <input
+            type="date"
+            class="form-control"
+            id="validationServer2"
+            required
+          />
+          <div class="invalid-feedback">Пожалуйста, выберите дату.</div>
+        </div>
+
+        <div class="col-12">
+          <label for="validationServer3" class="form-label"
+            >Серия и номер водительского удостоверения</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="validationServer3"
+            placeholder="1234 567890"
+            pattern="[0-9]{4} [0-9]{6}"
+            required
+          />
+          <div class="invalid-feedback">
+            Введите серию и номер в формате: 1234 567890
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="validationServer4" class="form-label">Дата выдачи</label>
+          <input
+            type="date"
+            class="form-control"
+            id="validationServer4"
+            required
+          />
+          <div class="invalid-feedback">Пожалуйста, выберите дату выдачи.</div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="validationServer5" class="form-label">Модель</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationServer5"
+            required
+          />
+          <div class="invalid-feedback">
+            Пожалуйста, укажите модель автомобиля.
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="validationServer6" class="form-label"
+            >Марка и модель</label
+          >
+          <select id="validationServer6" class="form-select" required>
+            <option value="" selected disabled>Выберите марку</option>
+            <option>Mercedes-Benz</option>
+            <option>BMW</option>
+            <option>Audi</option>
+            <option>Volkswagen</option>
+          </select>
+          <div class="invalid-feedback">
+            Пожалуйста, выберите марку автомобиля.
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <label for="validationServer7" class="form-label">Тип оплаты</label>
+          <select id="validationServer7" class="form-select" required>
+            <option value="" selected disabled>Выберите оплату</option>
+            <option>Наличные</option>
+            <option>Банковской картой</option>
+          </select>
+          <div class="invalid-feedback">Пожалуйста, выберите тип оплаты.</div>
+        </div>
+
+        <div class="col-12">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="validationServer8"
+              required
+            />
+            <label class="form-check-label" for="validationServer8">
+              ознакомлен с правилами предоставления услуги тест-драйва
+            </label>
+            <div class="invalid-feedback">
+              Вы должны согласиться с правилами.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 btn-group">
+          <a class="btn btn-primary" href="requestbid.html">
+            Вернуться назад
+          </a>
+          <button type="submit" class="btn btn-danger">Отправить заявку</button>
+        </div>
+      </form>
+    </main>
+
+    <script>
+      (function () {
+        "use strict";
+
+        var forms = document.querySelectorAll(".needs-validation");
+
+        Array.prototype.slice.call(forms).forEach(function (form) {
+          form.addEventListener(
+            "submit",
+            function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              } else {
+                event.preventDefault();
+                alert("Вы зарегистрировались, войдите в профиль");
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+  </body>
+  <script src="script/scriptAlert.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"
+  ></script>
 </html>
