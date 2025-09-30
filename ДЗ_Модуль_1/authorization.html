@@ -12,49 +12,87 @@
       crossorigin="anonymous"
     />
   </head>
-  <body class="bg-body-tertiary">
+  <body class="bg-dark text-light">
     <header>
-      <nav class="navbar bg-body-tertiary">
+      <nav class="navbar bg-primary text-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Едем, но это не точно</a>
+          <a class="navbar-brand text-light" href="#">Едем, но это не точно</a>
         </div>
       </nav>
-      <p class="text-center display-6">Авторизация</p>
+      <p class="text-center m-5 display-6">Авторизация</p>
     </header>
-    <main class="d-flex justify-content-center p-5">
-      <form>
+    <main class="d-flex justify-content-center p-3">
+      <form class="auth-form needs-validation" novalidate>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Логин</label>
+          <label for="validationCustom01" class="form-label">Логин</label>
           <input
-            type="email"
+            type="text"
             class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
+            id="validationCustom01"
+            minlength="6"
+            required
           />
+          <div class="invalid-feedback">
+            Логин должен содержать не менее 6 символов
+          </div>
         </div>
+
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Пароль</label>
+          <label for="exampleInputPassword1" class="form-label">Пароль</label>
           <input
-            type="email"
+            type="password"
             class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
+            id="exampleInputPassword1"
+            required
+            minlength="8"
           />
+          <div class="invalid-feedback">
+            Пароль должен содержать не менее 8 символов
+          </div>
         </div>
 
         <div class="mb-3 form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1" />
           <label class="form-check-label" for="exampleCheck1"
-            >Проверь меня</label
+            >Запомнить меня</label
           >
         </div>
-        <a class="btn btn-secondary" href="requestbid.html" role="button"
-          >Войти</a
-        >
-        <a class="btn btn-secondary" href="register.html" role="button"
-          >Вернуться в Регистрации
-        </a>
+
+        <div class="btn-group">
+          <button type="submit" class="btn btn-outline-danger">Войти</button>
+          <a class="btn btn-outline-secondary" href="register.html"
+            >Вернуться к регистрации</a
+          >
+        </div>
       </form>
+      <script>
+        (function () {
+          "use strict";
+
+          // Получаем форму
+          const form = document.querySelector(".needs-validation");
+
+          // Обработчик отправки формы
+          form.addEventListener(
+            "submit",
+            function (event) {
+              // Проверяем валидность формы
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              } else {
+                // Если форма валидна, перенаправляем на другую страницу
+                event.preventDefault(); // Предотвращаем стандартную отправку формы
+                window.location.href = "requestbid.html"; // Перенаправляем
+              }
+
+              // Добавляем класс для отображения ошибок
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        })();
+      </script>
     </main>
   </body>
   <script
