@@ -1,0 +1,34 @@
+.block {
+	background-color: beige;
+	border-radius: 4em;
+	margin: 2em;
+	padding: 4em;
+}
+.c-text {
+	text-align: center;
+}
+.exit-btn {
+	color: crimson;
+	font-weight: 600;
+	padding: 0.5em 1em;
+	border-radius: 1em;
+	transition: ease-in-out 200ms;
+}
+.exit-btn:hover {
+	background-color: crimson;
+	color: black;
+}
+.application {
+	background-color: beige;
+	transition: all ease-in-out 250ms;
+	padding: 1em;
+	border-radius: 1em;
+}
+.application:hover {
+	transform: translateY(1px) scale(1.01);
+}
+input {
+	padding: 15px !important;
+	border: beige !important;
+	outline: beige !important;
+}
